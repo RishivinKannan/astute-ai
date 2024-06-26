@@ -1,33 +1,29 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: white;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.animate-bg-gradient {
+  background-size: 200% 100%;
+  background-position: 100% 0%;
+
+  transition: background-position 0.7s;
+}
+
+.animate-bg-gradient:hover {
+  background-position: 0% 0%;
+}
+
+.button-gradient {
+  @apply bg-gradient-to-r from-indigo-900 via-transparent to-indigo-900;
+}
+
+.radial-gradient {
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    #504bb9 0%,
+    rgba(80, 75, 185, 0) 100%
+  );
 }
