@@ -14,7 +14,7 @@ const Features = () => {
       </div>
       <Square className="absolute bottom-0 right-16 -rotate-[135deg] " />
       <Eclipse className="opacity-50 md:w-[500px] md:h-[500px] top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/4 " />
-      <div className="container  mx-auto pl-4 py-2 h-screen grid grid-cols-2 gap-4 items-center ">
+      <div className="w-5/6 container mx-auto pl-4 py-24 grid grid-cols-2 gap-4 items-center ">
         <div className="w-full space-y-10 col-span-2 md:col-span-1">
           <h3 className="text-5xl tracking-wide leading-snug">
             Explore our amazing features
