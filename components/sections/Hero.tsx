@@ -19,6 +19,10 @@ const Hero = () => {
           words="Transforming Business Workflow, Enhancing Business Performance"
         />
         <InputBox />
+        <p className="text-[10px] p-1 text-center">
+          I am a Generative AI search engine for this website. I will assist you
+          in navigating throughout the website.
+        </p>
         <div className="w-full md:w-5/6 mx-auto h-[500px] mt-14 bg-indigo-950 rounded-[3rem]" />
       </div>
     </section>
