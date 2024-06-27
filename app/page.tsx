@@ -3,12 +3,25 @@ import Blogs from "@/components/sections/Blogs";
 import Features from "@/components/sections/Features";
 import Hero from "@/components/sections/Hero";
 
-export default function Home() {
+async function getBlogs() {
+  const res = await fetch(
+    "https://vishnupk05.pythonanywhere.com/api/fetch_6_posts"
+  );
+
+  if (!res.ok) {
+    throw new Error("Failed to fetch data");
+  }
+
+  return res.json();
+}
+
+export default async function Home() {
+  const data = await getBlogs();
   return (
     <main className=" w-full pt-16 bg-black ">
       <Hero />
       <Features />
-      <Blogs />
+      <Blogs blogs={data} />
     </main>
   );
 }
