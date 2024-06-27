@@ -18,7 +18,7 @@ const BlogCard: FC<BlogProps> = ({ blog }) => {
   return (
     <div
       className={cn(
-        "relative w-60 md:w-72 h-80  mx-auto rounded-3xl p-4 space-y-4 ",
+        "relative  md:w-72 h-80  mx-auto rounded-3xl p-4 space-y-4 ",
         "bg-gradient-to-b from-indigo-950 via-indigo-900 to-transparent"
       )}
     >
