@@ -7,21 +7,27 @@ const {
   default: flattenColorPalette,
 } = require("tailwindcss/lib/util/flattenColorPalette");
 
-const config: Config = {
+const config = {
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
   ],
+  prefix: "",
   theme: {
+    container: {
+      center: true,
+      padding: "2rem",
+      screens: {
+        "2xl": "1400px",
+      },
+    },
     extend: {
       colors: {
         indigo: {
           1000: "#070122",
         },
-      },
-      animation: {
-        shake: "shake 0.82s cubic-bezier(.36,.07,.19,.97) infinite",
       },
       keyframes: {
         shake: {
@@ -41,10 +47,24 @@ const config: Config = {
             transform: "scale3d(1, 1, 1)",
           },
         },
+        "accordion-down": {
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
+        },
+        "accordion-up": {
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
+      },
+      animation: {
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
+        shake: "shake 0.82s cubic-bezier(.36,.07,.19,.97) infinite",
       },
     },
   },
   plugins: [
+    require("tailwindcss-animate"),
     function ({ matchUtilities, theme }: any) {
       matchUtilities(
         {
@@ -64,4 +84,5 @@ const config: Config = {
     },
   ],
 };
+
 export default config;
