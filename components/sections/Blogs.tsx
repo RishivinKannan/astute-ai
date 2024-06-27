@@ -30,7 +30,7 @@ const Blogs = ({ blogs }: { blogs: TBlogs }) => {
         <h2 className="text-center text-5xl underline mb-20">Blogs</h2>
         <div className="w-5/6 mx-auto">
           <Carousel className="w-full">
-            <CarouselContent className=" pb-8">
+            <CarouselContent className="pb-8">
               {blogs.map((blog) => (
                 <CarouselItem
                   key={blog.id}

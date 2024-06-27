@@ -18,7 +18,7 @@ const BlogCard: FC<BlogProps> = ({ blog }) => {
   return (
     <div
       className={cn(
-        "relative w-72 h-80  mx-auto rounded-3xl p-4 space-y-4 ",
+        "relative w-5/6 md:w-72 h-80  mx-auto rounded-3xl p-4 space-y-4 ",
         "bg-gradient-to-b from-indigo-950 via-indigo-900 to-transparent"
       )}
     >
@@ -29,7 +29,9 @@ const BlogCard: FC<BlogProps> = ({ blog }) => {
         width={100}
         height={60}
       />
-      <h4 className="text-xl text-center font-semibold">{blog.title}</h4>
+      <h4 className="text-2xl md:text-xl text-center font-semibold">
+        {blog.title}
+      </h4>
       <Button className="text-base py-1 px-6 font-semibold absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 ">
         Read More
       </Button>
