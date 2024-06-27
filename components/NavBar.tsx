@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Button from "./Button";
+import { mokoto } from "@/utils/fonts";
 
 const NavBar = () => {
   const navs = [
@@ -18,10 +19,13 @@ const NavBar = () => {
     },
   ];
   return (
-    <div className="w-full fixed bg-indigo-1000 py-4 px-6 z-50">
+    <div className="w-full fixed bg-indigo-1000 py-3 px-6 z-50">
       <div className="mx-auto flex justify-between items-center">
-        <Image width={42} height={42} src={"./logo.svg"} alt="LOGO" />
-        <ul className="flex gap-16 items-center translate-x-10">
+        <div className="flex  items-baseline text-xl">
+          <Image width={42} height={42} src={"./logo.svg"} alt="LOGO" />
+          <span className={mokoto.className}>STUTE</span>
+        </div>
+        <ul className="flex gap-16 items-center translate-x-4 ">
           {navs.map((nav) => (
             <li key={nav.name}>
               <Link

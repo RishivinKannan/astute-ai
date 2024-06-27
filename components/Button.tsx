@@ -1,6 +1,14 @@
-const Button = ({ children }: { children: React.ReactNode }) => {
+const Button = ({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) => {
   return (
-    <button className="button-gradient border-4 border-indigo-900 rounded-full px-6 py-1 hover:border-indigo-800">
+    <button
+      className={`${className} text-sm md:text-base button-gradient border-4 border-indigo-900 rounded-full md:px-6 px-2 md:py-1  hover:border-indigo-800`}
+    >
       {children}
     </button>
   );
