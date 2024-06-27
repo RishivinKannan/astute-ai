@@ -7,8 +7,8 @@ import { TextGenerateEffect } from "../TextGenerate";
 const Hero = () => {
   return (
     <section className="relative w-full h-auto overflow-hidden">
-      <Square className="absolute z-10 top-1/4 lg:top-1/3 md:left-4 -rotate-45 " />
-      <Square className="absolute z-10 top-20 -right-4 -rotate-[135deg] " />
+      <Square className="hidden lg:block absolute z-10 lg:top-1/3 md:left-4 -rotate-45 " />
+      <Square className="absolute z-10 top-20 -right-2 lg:-right-4 -rotate-[135deg] " />
       <Eclipse className="z-10 -top-64 md:-top-[800px] left-1/2 -translate-x-1/2" />
       <Eclipse className="z-10 -bottom-56 md:-bottom-[650px] -left-1/2 " />
       <Eclipse className=" z-10 -bottom-56 md:-bottom-[650px] -right-1/2 " />

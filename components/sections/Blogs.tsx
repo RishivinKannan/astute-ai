@@ -27,7 +27,9 @@ const Blogs = ({ blogs }: { blogs: TBlogs }) => {
       <Eclipse className=" z-10 -bottom-56 md:-bottom-[650px] -right-1/2 " />
       <Grid height="h-[40rem]" />
       <div className="container  absolute inset-0 z-20  pt-8  ">
-        <h2 className="text-center text-5xl underline mb-20">Blogs</h2>
+        <h2 className="text-center text-3xl lg:text-5xl underline mb-20">
+          Blogs
+        </h2>
         <div className="w-5/6 mx-auto">
           <Carousel className="w-full">
             <CarouselContent className="pb-8">
