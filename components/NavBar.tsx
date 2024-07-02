@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import Button from "./Button";
+import Button, { buttonClasses } from "./Button";
 import { mokoto } from "@/utils/fonts";
 import {
   DropdownMenu,
@@ -11,6 +11,7 @@ import {
   DropdownMenuSeparator,
 } from "./ui/dropdown-menu";
 import { AlignRightIcon } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 const NavBar = () => {
   const navs = [
@@ -30,10 +31,10 @@ const NavBar = () => {
   return (
     <div className="w-full fixed bg-indigo-1000 py-3 px-6 z-50">
       <div className="mx-auto flex justify-between items-center">
-        <div className="flex  items-baseline text-xl">
+        <Link href="/" className="flex  items-baseline text-xl">
           <Image width={42} height={42} src={"./logo.svg"} alt="LOGO" />
           <span className={mokoto.className}>STUTE</span>
-        </div>
+        </Link>
         <ul className="hidden md:flex gap-16 items-center translate-x-10">
           {navs.map((nav) => (
             <li key={nav.name}>
@@ -47,12 +48,21 @@ const NavBar = () => {
           ))}
         </ul>
         <div className="flex gap-8">
-          <button className="hidden md:block font-semibold hover:underline underline-offset-2">
-            SIGN IN
-          </button>
-          <Button className="hidden md:block !px-8 font-semibold ">
+          <Link
+            href="/signup"
+            className="hidden md:inline leading-10  font-semibold hover:underline underline-offset-2"
+          >
+            SIGN UP
+          </Link>
+          <Link
+            href="/login"
+            className={cn(
+              "hidden md:block !px-8 font-semibold ",
+              buttonClasses()
+            )}
+          >
             LOGIN
-          </Button>
+          </Link>
         </div>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
@@ -76,12 +86,20 @@ const NavBar = () => {
             <DropdownMenuSeparator className="bg-slate-800" />
             <DropdownMenuGroup className="space-y-1">
               <DropdownMenuItem>
-                <button className="font-semibold w-full hover:underline underline-offset-2">
-                  SIGN IN
-                </button>
+                <Link
+                  href="/signup"
+                  className="text-center font-semibold hover:underline underline-offset-2"
+                >
+                  SIGN UP
+                </Link>
               </DropdownMenuItem>
               <DropdownMenuItem>
-                <Button className="w-full font-semibold">LOGIN</Button>
+                <Link
+                  href="/login"
+                  className={cn("w-full font-semibold", buttonClasses())}
+                >
+                  LOGIN
+                </Link>
               </DropdownMenuItem>
             </DropdownMenuGroup>
           </DropdownMenuContent>
