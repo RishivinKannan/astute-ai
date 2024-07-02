@@ -18,11 +18,11 @@ const BlogCard: FC<BlogProps> = ({ blog }) => {
   return (
     <div
       className={cn(
-        "relative  md:w-72 h-80  mx-auto rounded-3xl p-4 space-y-4 ",
+        "relative  md:w-72 h-96  mx-auto rounded-3xl p-4 space-y-4 ",
         "bg-gradient-to-b from-indigo-950 via-indigo-900 to-transparent"
       )}
     >
-      <img
+      <Image
         src={blog.thumbnail.includes("http") ? blog.thumbnail : ""}
         alt="thumnail"
         className="w-full h-1/2 object-fill rounded-3xl"

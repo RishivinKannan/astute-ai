@@ -20,17 +20,17 @@ type TBlogs = {
 }[];
 const Blogs = ({ blogs }: { blogs: TBlogs }) => {
   return (
-    <section id="blogs" className="relative w-full h-auto overflow-hidden">
-      <Square className="absolute z-10 top-10 left-6 rotate-45 " />
+    <section id="blogs" className="relative w-full overflow-hidden">
+      <Square className="absolute z-10 top-16 left-6 rotate-45 " />
       <Eclipse className="z-10 -top-64 md:-top-[800px] left-1/2 -translate-x-1/2" />
       <Eclipse className="z-10 -bottom-56 md:-bottom-[650px] -left-1/2 " />
       <Eclipse className=" z-10 -bottom-56 md:-bottom-[650px] -right-1/2 " />
-      <Grid height="h-[40rem]" />
-      <div className="container  absolute inset-0 z-20  pt-8  ">
+      <Grid height="h-[48rem]" />
+      <div className="container  absolute inset-0 z-20  pt-20  ">
         <h2 className="text-center text-3xl lg:text-5xl underline mb-20">
           Blogs
         </h2>
-        <div className="w-5/6 mx-auto">
+        <div className="w-5/6 mx-auto ">
           <Carousel className="w-full">
             <CarouselContent className="pb-8">
               {blogs.map((blog) => (
@@ -42,8 +42,14 @@ const Blogs = ({ blogs }: { blogs: TBlogs }) => {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselNext />
-            <CarouselPrevious />
+            <CarouselNext
+              variant={"ghost"}
+              className="bg-gradient-to-b from-indigo-900 to-indigo-800 "
+            />
+            <CarouselPrevious
+              variant={"ghost"}
+              className="bg-gradient-to-b from-indigo-900 to-indigo-800 "
+            />
           </Carousel>
         </div>
         <div className=" mx-auto flex justify-center mt-12 ">
