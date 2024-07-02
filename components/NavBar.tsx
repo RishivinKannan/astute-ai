@@ -88,7 +88,7 @@ const NavBar = () => {
               <DropdownMenuItem>
                 <Link
                   href="/signup"
-                  className="text-center font-semibold hover:underline underline-offset-2"
+                  className="w-full text-center font-semibold hover:underline underline-offset-2"
                 >
                   SIGN UP
                 </Link>
