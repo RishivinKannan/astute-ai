@@ -2,16 +2,10 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { FC } from "react";
 import Button from "./Button";
+import { TBlog } from "@/types/blogs";
 
 interface BlogProps {
-  blog: {
-    author: string;
-    content: string;
-    date_created: string;
-    id: number;
-    thumbnail: string;
-    title: string;
-  };
+  blog: TBlog;
 }
 
 const BlogCard: FC<BlogProps> = ({ blog }) => {

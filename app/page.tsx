@@ -5,7 +5,10 @@ import Hero from "@/components/sections/Hero";
 
 async function getBlogs() {
   const res = await fetch(
-    "https://vishnupk05.pythonanywhere.com/api/fetch_6_posts"
+    "https://vishnupk05.pythonanywhere.com/api/fetch_6_posts",
+    {
+      cache: "no-store",
+    }
   );
 
   if (!res.ok) {

@@ -1,3 +1,4 @@
+import { TBlog } from "@/types/blogs";
 import BlogCard from "../BlogCard";
 import Button from "../Button";
 import Eclipse from "../Eclipse";
@@ -10,15 +11,8 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "../ui/carousel";
-type TBlogs = {
-  author: string;
-  content: string;
-  date_created: string;
-  id: number;
-  thumbnail: string;
-  title: string;
-}[];
-const Blogs = ({ blogs }: { blogs: TBlogs }) => {
+
+const Blogs = ({ blogs }: { blogs: TBlog[] }) => {
   return (
     <section id="blogs" className="relative w-full overflow-hidden">
       <Square className="absolute z-10 top-10 md:top-16 left-6 rotate-45 " />
@@ -31,7 +25,12 @@ const Blogs = ({ blogs }: { blogs: TBlogs }) => {
           Blogs
         </h2>
         <div className="w-5/6 mx-auto ">
-          <Carousel className="w-full">
+          <Carousel
+            className="w-full"
+            opts={{
+              slidesToScroll: "auto",
+            }}
+          >
             <CarouselContent className="pb-8">
               {blogs.map((blog) => (
                 <CarouselItem
